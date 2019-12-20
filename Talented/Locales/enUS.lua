@@ -129,7 +129,7 @@ L:RegisterTranslations("enUS", function () return {
 	["Hook Inspect UI"] = true,
 	["Hook the Talent Inspection UI."] = true,
 	["Restore bars with ABS"] = true,
-	["If enabled, action bars will be restored automatically after successful respec. Applied template name (lower case) is used as parameter. Requires ABS addon to work."] = true,
+	["If enabled, action bars will be restored automatically after successful respec. Applied template name until first dash is used as parameter (lower case, trailing space removed). Requires ABS addon to work."] = true,
 	["Skipping action bar restore, profile %q not found."] = true,
 	["You can edit the name of the template here. You must press the Enter key to save your changes."] = true,
 } end)

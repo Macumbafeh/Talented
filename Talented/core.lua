@@ -301,7 +301,7 @@ Talented.options = {
 				},
 				restore_bars = {
 					name = L["Restore bars with ABS"],
-					desc = L["If enabled, action bars will be restored automatically after successful respec. Applied template name (lower case) is used as parameter. Requires ABS addon to work."],
+					desc = L["If enabled, action bars will be restored automatically after successful respec. Applied template name until first dash is used as parameter (lower case, trailing space removed). Requires ABS addon to work."],
 					type = "toggle",
 					get = function() return Talented.db.profile.restore_bars end,
 					set = function(value) Talented.db.profile.restore_bars = value end,

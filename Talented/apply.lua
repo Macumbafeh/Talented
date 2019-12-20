@@ -38,7 +38,7 @@ function Talented:ApplyNextTalentPoint()
 	end
 	if not found then
 		if self.db.profile.restore_bars and ABS then
-			local set = template.name:lower()
+			local set = template.name:match("[^-]*"):trim():lower()
 			if ABS:HasProfile(set) then
 				ABS:RestoreProfile(set)
 			else
