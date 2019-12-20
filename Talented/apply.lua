@@ -37,8 +37,23 @@ function Talented:ApplyNextTalentPoint()
 		end
 	end
 	if not found then
+		if self.db.profile.restore_bars and ABS then
+			local set = template.name:lower()
+			if ABS:HasProfile(set) then
+				ABS:RestoreProfile(set)
+			else
+				self:Print(L["Skipping action bar restore, profile %q not found."], set)
+			end
+		end
+
 		reset(L["Template applied successfully, %d talent points remaining."], cp)
 	else
 		reset(L["Error while applying talents! Invalid template!"])
+	end
+end
+
+if ABS then
+	function ABS:HasProfile(name)
+		return not not self.db.sets[PlayerClass][name]
 	end
 end

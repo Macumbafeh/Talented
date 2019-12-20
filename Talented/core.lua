@@ -37,6 +37,7 @@ Talented:RegisterDefaults("profile", {
 	offsety = 0,
 	point = "CENTER",
 	hook_inspect_ui = false,
+	restore_bars = true,
 })
 Talented:RegisterDefaults("char", {
 --	target = nil,
@@ -297,6 +298,14 @@ Talented.options = {
 					get = function() return Talented.db.profile.hook_inspect_ui end,
 					set = function(value) Talented.db.profile.hook_inspect_ui = value ; Talented:CheckHookInspectUI() end,
 					order = 700,
+				},
+				restore_bars = {
+					name = L["Restore bars with ABS"],
+					desc = L["If enabled, action bars will be restored automatically after successful respec. Applied template name (lower case) is used as parameter. Requires ABS addon to work."],
+					type = "toggle",
+					get = function() return Talented.db.profile.restore_bars end,
+					set = function(value) Talented.db.profile.restore_bars = value end,
+					order = 800,
 				},
 			}
 		},
